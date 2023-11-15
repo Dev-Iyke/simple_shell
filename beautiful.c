@@ -10,6 +10,10 @@
 int main(void)
 {
 	pid_t pid;
+	pid_t ppid;
+
+	ppid = getppid();
+	printf("the ppid is %u\n", ppid);
 
 	pid = getpid();
 	if (pid == -1)
