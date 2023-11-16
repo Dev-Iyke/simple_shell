@@ -38,16 +38,29 @@ void execute_command(char *command) {
         exit(EXIT_FAILURE);
     }
 
-    if (child_pid == 0) {  /*Child process*/
+    if (child_pid == 0) {  /* Child process */
         if (execve(command, args, NULL) == -1) {
             perror("execve");
             exit(EXIT_FAILURE);
         }
-    } else {  /*Parent process*/
+    } else {  /* Parent process */
         waitpid(child_pid, &status, 0);
 
         if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
             fprintf(stderr, "./shell: No such file or directory\n");
         }
     }
+}
+
+int main(void) {
+    char *command;
+
+    while (1) {
+        display_prompt();
+        command = read_input();
+        execute_command(command);
+        free(command);
+    }
+
+    return 0;
 }
