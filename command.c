@@ -3,9 +3,10 @@
 void run_command(char **tokens);
 
 /**
- * run_command - Function to execute a command
- * @tokens: Array of command tokens
+ * run_command The function to execute a command
+ * @tokens: The array of command tokens
  */
+
 void run_command(char **tokens)
 {
 	pid_t pid;
@@ -56,4 +57,3 @@ void run_command(char **tokens)
 		waitpid(pid, &status, 0);
 	}
 }
-
