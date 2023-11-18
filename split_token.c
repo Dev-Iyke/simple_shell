@@ -2,9 +2,10 @@
 void tokenize_tokens(char *data_line);
 
 /**
- * tokenize_tokens - Function to split data_line into tokens
- * @data_line: Input string to be split
+ * tokenize_tokens - The function to split data_line into tokens
+ * @data_line: The input string to be split
  */
+
 void tokenize_tokens(char *data_line)
 {
 	char *result, *strim_line, *end;
@@ -72,4 +73,3 @@ void tokenize_tokens(char *data_line)
 	}
 	free(tokens);
 }
-

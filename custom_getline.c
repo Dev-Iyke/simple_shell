@@ -5,13 +5,14 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 
 
 /**
- * custom_getline - Custom implementation of the getline function.
+ * custom_getline - The custom implementation of the getline function.
  * @lineptr: Pointer to the buffer storing the line.
  * @n: Pointer to the size of the buffer.
  * @stream: File stream to read from.
  *
  * Return: Number of characters read (including newline), or -1 on failure.
  */
+
 ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 {
 	size_t buffer_size = 128;
@@ -78,4 +79,3 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 
 	return (ssize_t);
 }
-

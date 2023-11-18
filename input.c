@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * read_user_input - Read and parse user input.
+ * read_user_input - Would read and parse user input.
  * This function takes a pointer to the input line buffer and the size of the
  * input buffer as parameters. It is responsible for reading user input and
  * parsing it as needed.
@@ -10,6 +10,7 @@
  *
  * Return: Number of characters read or -1 on error.
  */
+
 int read_user_input(char **input, size_t *data)
 {
 	char *prompt = "G$ ";  /* The custom prompt to be displayed */
@@ -39,4 +40,3 @@ int read_user_input(char **input, size_t *data)
 
 	return (command_length);  /* Return the number of characters read */
 }
-
