@@ -80,4 +80,3 @@ void cd_builtins(char **args)
 
 	free(current_folder);
 }
-

@@ -4,11 +4,10 @@
 int env_builtins(char **result);
 
 /**
- * env_builtins - Would handle built-in commands related to environment
+ * env_builtins - Handle built-in commands related to environment
  * @result: Tokenized command and arguments
  * Return: 1 if a built-in command was handled, 0 otherwise
  */
-
 int env_builtins(char **result)
 {
 	if (strcmp(result[0], "setenv") == 0)

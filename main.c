@@ -1,13 +1,12 @@
 #include "shell.h"
 
 /**
- * main - The entry point for the simple shell program.
+ * main - Entry point for the simple shell program.
  * @argc: Argument count (unused)
  * @argv: Argument values (unused)
  *
  * Return: Always returns EXIT_SUCCESS
  */
-
 int main(int argc, char **argv)
 {
 	ssize_t input_length;

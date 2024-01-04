@@ -1,18 +1,17 @@
 #include "shell.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 
-
 /**
- * custom_getline - The custom implementation of the getline function.
+ * custom_getline - Custom implementation of the getline function.
  * @lineptr: Pointer to the buffer storing the line.
  * @n: Pointer to the size of the buffer.
  * @stream: File stream to read from.
  *
  * Return: Number of characters read (including newline), or -1 on failure.
  */
-
 ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 {
 	size_t buffer_size = 128;
@@ -23,7 +22,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 
 	if (lineptr == NULL || n == NULL || stream == NULL)
 	{
-		errno = EINVAL;  /* Invalid argument */
+		errno = EINVAL; /* Invalid argument */
 		return (-1);
 	}
 
@@ -32,7 +31,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 		*lineptr = (char *)malloc(buffer_size);
 		if (*lineptr == NULL)
 		{
-			errno = ENOMEM;  /* Memory allocation error */
+			errno = ENOMEM; /* Memory allocation error */
 			return (-1);
 		}
 	}
@@ -47,7 +46,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 			{
 				free(*lineptr);
 				*lineptr = NULL;
-				errno = ENOMEM;  /* Memory allocation error */
+				errno = ENOMEM; /* Memory allocation error */
 				return (-1);
 			}
 			*lineptr = temp;
@@ -59,7 +58,6 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 		{
 			break;
 		}
-
 	}
 
 	if (i < buffer_size)
@@ -68,7 +66,6 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 	}
 	else
 	{
-
 		(*lineptr)[buffer_size - 1] = '\0';
 	}
 
@@ -77,5 +74,5 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 		*n = i;
 	}
 
-	return (ssize_t);
+	return ((ssize_t)i);
 }

@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * set_environment_variable - Would set or update an environment variable.
+ * set_environment_variable - Set or update an environment variable.
  * @arguments: An array of strings containing the variable name and value.
  * Return: None.
  */
-
 void set_environment_variable(char **arguments)
 {
 	/* Check if arguments are valid */
@@ -25,7 +24,6 @@ void set_environment_variable(char **arguments)
  * @arguments: An array of strings containing the variable name.
  * Return: None.
  */
-
 void unset_environment_variable(char **arguments)
 {
 	/* Check if arguments are valid */
@@ -46,7 +44,6 @@ void unset_environment_variable(char **arguments)
  * @args: The args array.
  * Return: None.
  */
-
 void list_environment(char **args)
 {
 	char **environment = environ;
