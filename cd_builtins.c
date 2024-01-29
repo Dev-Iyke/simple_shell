@@ -1,10 +1,12 @@
 #include "shell.h"
 
 void cd_builtins(char **args);
+
 /**
- * cd_builtins - Change the current directory
+ * cd_builtins - Would change the current directory
  * @args: The arguments array
  */
+
 void cd_builtins(char **args)
 {
 	char *new_folder, *working_folder, *current_folder;
@@ -50,7 +52,7 @@ void cd_builtins(char **args)
 	}
 	else
 	{
-		/* On successful directory change, update environment variables */
+		/* On successful directory change, would update environment variables */
 		working_folder = getcwd(NULL, 0);
 		if (working_folder == NULL)
 		{
@@ -68,7 +70,7 @@ void cd_builtins(char **args)
 			perror("./my_shell");
 		}
 
-		/* If the argument is "-", print the current directory */
+		/* If the argument is "-", would print the current directory */
 		if (args[0] && strcmp(args[0], "-") == 0)
 		{
 			fprintf(stdout, "%s\n", getenv("PWD"));
